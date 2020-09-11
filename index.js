@@ -26,6 +26,13 @@ window.addEventListener('load', () => {
       flowControl: event.target.elements['flow-control'].value,
     }
 
+    serialOptions.baudrate = serialOptions.baudRate
+    serialOptions.databits = serialOptions.dataBits
+    serialOptions.stopbits = serialOptions.stopBits
+    serialOptions.parity = serialOptions.parity
+    serialOptions.buffersize = serialOptions.bufferSize
+    serialOptions.flowcontrol = serialOptions.flowControl
+
     const port = await serial.getSerialPort()
     const io = await serial.getSerialPortStream(port, serialOptions)
     output.textContent = ''
