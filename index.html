@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="origin-trial" content="Amxjo+WLzjYcKjDh7a0c7VXPHiyKHUb5aezbtTz2Thkb3XKu1Wy+7JFDGq6r6lyPKzvLWxPbHuNgK7VezPXKfAIAAABUeyJvcmlnaW4iOiJodHRwczovL3NlcmlhbC5hcHAuYWlkYW4ucHJvOjQ0MyIsImZlYXR1cmUiOiJTZXJpYWwiLCJleHBpcnkiOjE2MDM0NTg3MDN9">
+
+    <title>serial.app.aidan.pro</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="lib/serial.js" as="script">
+    <script type="module" src="index.js"></script>
+
+  </head>
+
+  <body>
+    <div id="application">
+      <form name="serial-options">
+        <details>
+          <summary>Advanced</summary>
+          <div class="grid">
+            <label for="baud-rate">Baud Rate</label>
+            <select id="baud-rate" name="baud-rate">
+              <option value="115200">115,200 Bd</option>
+              <option value="57600">57,600 Bd</option>
+              <option value="38400">38,400 Bd</option>
+              <option value="19200">19,200 Bd</option>
+              <option value="9600" selected>9,600 Bd</option>
+              <option value="4800">4,800 Bd</option>
+              <option value="2400">2,400 Bd</option>
+              <option value="1800">1,800 Bd</option>
+              <option value="1200">1,200 Bd</option>
+              <option value="600">600 Bd</option>
+              <option value="300">300 Bd</option>
+              <option value="200">200 Bd</option>
+              <option value="150">150 Bd</option>
+              <option value="134">134 Bd</option>
+              <option value="110">110 Bd</option>
+              <option value="75">75 Bd</option>
+              <option value="50">50 Bd</option>
+            </select>
+            <label for="data-bits">Data Bits</label>
+            <select id="data-bits" name="data-bits">
+              <option value="8" selected>8</option>
+              <option value="7">7</option>
+              <option value="6">6</option>
+              <option value="5">5</option>
+            </select>
+            <label for="stop-bits">Stop Bits</label>
+            <select id="stop-bits" name="stop-bits">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+            </select>
+            <label for="parity">Parity</label>
+            <select id="parity" name="parity">
+              <option value="none" selected>None</option>
+              <option value="even">Even</option>
+              <option value="odd">Odd</option>
+              <option value="mark">Mark</option>
+              <option value="space">Space</option>
+            </select>
+            <label for="buffer-size">Buffer Size</label>
+            <input
+              id="buffer-size"
+              name="buffer-size"
+              type="number"
+              value="255"
+              min="1"
+              max="16777216"
+            />
+            <label for="flow-control">Flow Control</label>
+            <select id="flow-control" name="flow-control">
+              <option value="none">None</option>
+              <option value="hardware">Hardware</option>
+            </select>
+          </div>
+        </details>
+        <button type="submit">Open Port</button>
+      </form>
+      <span id="output"></span>
+    </div>
+  </body>
+</html>
